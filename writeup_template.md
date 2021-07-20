@@ -1,13 +1,7 @@
 # **Traffic Sign Recognition** 
 
-## Writeup
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 ---
-
-**Build a Traffic Sign Recognition Project**
-
+## Overview
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
 * Explore, summarize and visualize the data set
@@ -43,11 +37,11 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43. 
 
-#### 2. Include an exploratory visualization of the dataset.
+####  Exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data images represented in each class of the traffic sign. For some classes the number of image are high which will result in high accuracy prediction for that class. 
 
-![alt text][image1]
+![alt text][./plots/Histogram_of_classes.png]
 
 ### Design and Test a Model Architecture
 
