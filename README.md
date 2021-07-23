@@ -125,7 +125,7 @@ As it can be seen 8 out of 10 predictions were correct, which means the model ha
 
 The top Five softmax probabilites for each prediction was:- 
 
-'
+```
 Image: test-images\caution.jpg
 Probabilities:
    1.000000 : 18 - General caution
@@ -205,4 +205,5 @@ Probabilities:
    0.000000 : 15 - No vehicles
    0.000000 : 9 - No passing
    0.000000 : 33 - Turn right ahead
-'
+
+```
