@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./plots/Model_accuracy.png "Accuracy"
 
 [image6]: ./plots/Test_images.png "Test Images"
-[image7]: ./test-images/Keep.png "Caution"
+[image7]: ./plots/Pred_images.png "Pred"
 
 
 ### Data Set Summary & Exploration
@@ -116,32 +116,90 @@ This number of images might not be enough for giving a valid result of the accur
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+![alt text][image7] 
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+As it can be seen 8 out of 10 predictions were correct, which means the model has 80% accuracy. The test set accuracy was 94%.
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### Softmax Probability 
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The top Five softmax probabilites for each prediction was:- 
+Image: test-images\caution.jpg
+Probabilities:
+   1.000000 : 18 - General caution
+   0.000000 : 11 - Right-of-way at the next intersection
+   0.000000 : 26 - Traffic signals
+   0.000000 : 27 - Pedestrians
+   0.000000 : 34 - Turn left ahead
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+Image: test-images\Keep_Right.jpeg
+Probabilities:
+   1.000000 : 38 - Keep right
+   0.000000 : 23 - Slippery road
+   0.000000 : 20 - Dangerous curve to the right
+   0.000000 : 31 - Wild animals crossing
+   0.000000 : 29 - Bicycles crossing
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+Image: test-images\No_Entry.jpeg
+Probabilities:
+   0.999998 : 17 - No entry
+   0.000001 : 35 - Ahead only
+   0.000000 : 32 - End of all speed and passing limits
+   0.000000 : 12 - Priority road
+   0.000000 : 33 - Turn right ahead
 
+Image: test-images\Pedestrian.jpeg
+Probabilities:
+   0.626803 : 0 - Speed limit (20km/h)
+   0.373165 : 1 - Speed limit (30km/h)
+   0.000026 : 18 - General caution
+   0.000005 : 4 - Speed limit (70km/h)
+   0.000000 : 27 - Pedestrians
 
-For the second image ... 
+Image: test-images\right_of_way.jpg
+Probabilities:
+   1.000000 : 11 - Right-of-way at the next intersection
+   0.000000 : 18 - General caution
+   0.000000 : 27 - Pedestrians
+   0.000000 : 30 - Beware of ice/snow
+   0.000000 : 28 - Children crossing
 
+Image: test-images\Road Work.jpeg
+Probabilities:
+   1.000000 : 25 - Road work
+   0.000000 : 20 - Dangerous curve to the right
+   0.000000 : 36 - Go straight or right
+   0.000000 : 29 - Bicycles crossing
+   0.000000 : 22 - Bumpy road
 
+Image: test-images\soeed_limit_50Km_h.jfif
+Probabilities:
+   0.999941 : 2 - Speed limit (50km/h)
+   0.000059 : 1 - Speed limit (30km/h)
+   0.000000 : 3 - Speed limit (60km/h)
+   0.000000 : 5 - Speed limit (80km/h)
+   0.000000 : 31 - Wild animals crossing
+
+Image: test-images\Stop.jpeg
+Probabilities:
+   0.649651 : 3 - Speed limit (60km/h)
+   0.190684 : 14 - Stop
+   0.091150 : 2 - Speed limit (50km/h)
+   0.030635 : 1 - Speed limit (30km/h)
+   0.015675 : 13 - Yield
+
+Image: test-images\Stop_sign.jpeg
+Probabilities:
+   0.702330 : 14 - Stop
+   0.245311 : 18 - General caution
+   0.033062 : 1 - Speed limit (30km/h)
+   0.010140 : 15 - No vehicles
+   0.002763 : 35 - Ahead only
+
+Image: test-images\Yield.jpeg
+Probabilities:
+   1.000000 : 13 - Yield
+   0.000000 : 35 - Ahead only
+   0.000000 : 15 - No vehicles
+   0.000000 : 9 - No passing
+   0.000000 : 33 - Turn right ahead
