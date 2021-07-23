@@ -110,9 +110,9 @@ Here are the 10 traffic signs that i downloaded some of them from the internet.
 
 ![alt text][image6] 
 
-The first image might be difficult to classify because ...
+This number of images might not be enough for giving a valid result of the accurcay of the model, however it should give a good idea. 
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### Model Prediction
 
 Here are the results of the prediction:
 
