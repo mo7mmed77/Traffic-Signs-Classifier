@@ -14,13 +14,13 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./plots/Histogram_of_classes.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./plots/dataset.png
+[image2]: ./plots/dataset.png "DataSet"
+[image3]: ./plots/Original_images.png "Original"
+[image4]: ./plots/Preprocessed.png "Preprocessed"
+[image5]: ./plots/Model_accuracy.png "Accuracy"
+
+[image6]: ./plots/Test_images.png "Test Images"
+[image7]: ./test-images/Keep.png "Caution"
 
 
 ### Data Set Summary & Exploration
@@ -39,8 +39,9 @@ signs data set:
 
 ####  Exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data images represented in each class of the traffic sign. For some classes the number of image are high which will result in high accuracy prediction for that class. 
-
+Here is an exploratory visualization of the data set.
+![alt text][image2]
+This is a bar chart showing how the data images represented in each class of the traffic sign. For some classes the number of image are high which will result in high accuracy prediction for that class. 
 
 ![alt text][image1]
 
@@ -49,21 +50,13 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 #### Processing of the Image Data
 The 'pre_process_images' function takes the images then convert it to gray scale then normalize it, to be ready for the training step. The normalization step is done to make the training more efficient and faster. The conversion to gray scale was done to eliminate the effect of colouring on the classification and make it solely about the shape and the curves of the traffic sign. 
 
-![alt text][image8]
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
+As a last step, I normalized the image data because it will be more effecient for the training process and takes less time. 
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
 
-The difference between the original data set and the augmented data set is the following ... 
+![alt text][image3]
+![alt text][image4]
 
 
 #### Final model architecture 
@@ -76,46 +69,46 @@ My final model consisted of the following layers:
 | Convolution 3x3     	| 1x1 stride, Valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
+| Convolution 3x3	    | 1x1 stride, valid padding     									|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Flatten	      	|  outputs 5x5x64 				|
+| Fully connected		|outputs 1600    									|
+| RELU					|												|
+| Dropout					|												|
+| Fully connected		|outputs 43    									|
 |						|												|
  
+Max pooling layers are  used to reduce layer dimensions to a minimal size.
 
+#### Model Training.
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+The model was trained with the following hyper-parameters:
 
-To train the model, I used an ....
+* Optimizer: Adam
+* Batch Size: 128
+* Epochs: 70
+* Learning Rate: 1E-3
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+These values are mostly typical except for the Ephochs I chose this number based on many training tests and it seems to be the optimal number in case of convergance within minimum time needed. 
 
-My final model results were:
-* training set accuracy of 100%
-* validation set accuracy of 98.8% 
-* test set accuracy of 90%
+The Final model results were:-
+* training set accuracy of 99.4%
+* validation set accuracy of 100% 
+* testing set accuracy of 94.2%
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+The number of Epochs plays a big role in increasing the accuracy of the model. Moreover, the learning rate was suffeicient enough to reach this validation set accuracy. 
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+![alt text][image5]
+
 
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### Testing the model with 10 images of Traffic Signs
 
-Here are five German traffic signs that I found on the web:
+Here are the 10 traffic signs that i downloaded some of them from the internet. 
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image6] 
 
 The first image might be difficult to classify because ...
 
