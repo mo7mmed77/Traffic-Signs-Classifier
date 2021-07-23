@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image8]: ./plots/dataset.png
 
 
 ### Data Set Summary & Exploration
@@ -41,6 +41,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data images represented in each class of the traffic sign. For some classes the number of image are high which will result in high accuracy prediction for that class. 
 
+
 ![alt text][image1]
 
 ### Design and Test a Model Architecture
@@ -48,6 +49,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 #### Processing of the Image Data
 The 'pre_process_images' function takes the images then convert it to gray scale then normalize it, to be ready for the training step. The normalization step is done to make the training more efficient and faster. The conversion to gray scale was done to eliminate the effect of colouring on the classification and make it solely about the shape and the curves of the traffic sign. 
 
+![alt text][image8]
 
 ![alt text][image2]
 
