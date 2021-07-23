@@ -60,6 +60,7 @@ Here is an example of an original image and an augmented image:
 
 
 #### Final model architecture 
+The Final model was chosen after testing different kinds of archeticture, such as AlexNet and VGG. The model is influneced by LeNet archeticure, because is more suitable for the given application, as well as its simplicity and relatively ease for training. Moreover, its great usage can be seen using a limited computational resources. In order to increase generalization the dropouts were added. 
 
 My final model consisted of the following layers:
 
@@ -119,7 +120,8 @@ Here are the results of the prediction:
 ![alt text][image7] 
 
 
-As it can be seen 8 out of 10 predictions were correct, which means the model has 80% accuracy. The test set accuracy was 94%.
+As it can be seen 8 out of 10 predictions were correct, which means the model has 80% accuracy. The test set accuracy was 94%. The Pedestrians sign seems to be the most difficult to predict after saveral iterations, this could be due to the fine details required to identify and train the model. The second wrong prediction was the stop sign with stamps, this was intended to simulate a scratched traffic sign, the model was not able to predict it properly. This could be due to the overfitting of the model. Perhaps another dropout layer can be added to reduce this wrong predictions. The other 8 sign traffic images were predicted correctly, which shows that this simple LeNet archeticture was able to give good results!. 
+
 
 #### Softmax Probability 
 
